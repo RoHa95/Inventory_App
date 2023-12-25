@@ -8,6 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log(ProductView);
   console.log(CategoryView);
-  ProductView.createProductList();
+  ProductView.createProductList(ProductView.products);
   CategoryView.createCategoryList();
 });

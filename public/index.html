@@ -126,7 +126,9 @@
         <!-- product list -->
         <h2 class="text-xl text-slate-300 font-bold mb-2">Product List</h2>
         <div class="flex items-center justify-between mb-6">
-          <label for="search-input" class="text-slate-500 text-lg"
+          <label
+            for="search-input"
+            class="text-slate-500 text-slate-700 text-lg font-bold font-thin"
             >search</label
           >
           <input
@@ -136,7 +138,23 @@
             class="bg-transparent rounded-xl border border-slate-500 text-slate-400"
           />
         </div>
-
+        <div class="flex items-center justify-between mb-6">
+          <label for="sort-products" class="text-slate-500 text-lg">sort</label>
+          <select
+            id="sort-products"
+            class="bg-transparent text-slate-400 rounded-xl"
+          >
+            <option class="bg-slate-500 text-slate-300" value="">
+              select a category
+            </option>
+            <option class="bg-slate-500 text-slate-300" selected value="newest">
+              newest
+            </option>
+            <option class="bg-slate-500 text-slate-300" value="oldest">
+              oldest
+            </option>
+          </select>
+        </div>
         <div class="product-list"></div>
 
         <div class="h-20"></div>

@@ -55,14 +55,17 @@ export default class Storage {
     }
     localStorage.setItem("category", JSON.stringify(savedCategories));
   }
-  static getAllProducts() {
+  static getAllProducts(sort = "newest") {
     const savedProducts = JSON.parse(localStorage.getItem("products1")) || [];
 
     //sort => desending
-    const sortedProducts = savedProducts.sort((a, b) => {
-      new Date(a.createdAt) > new Date(b.createdAt) ? 1 : -1;
+    return savedProducts.sort((a, b) => {
+      if (sort === "newest") {
+        return new Date(a.createdAt) > new Date(b.createdAt) ? -1 : 1;
+      } else if (sort === "oldest") {
+        return new Date(a.createdAt) > new Date(b.createdAt) ? 1 : -1;
+      }
     });
-    return sortedProducts;
   }
   static saveProducts(productToSave) {
     const saveProducts = Storage.getAllProducts();
